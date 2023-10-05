@@ -21,7 +21,8 @@
 
     Perintah CSS terdiri atas 2 komponen, yakni Selector & Declaration. 
     Selector berfungsi untuk memberi tahu browser bahwa pada elemen mana rule CSS diterapkan.
-    Selector dapat berupa elemen HTML, selector class atau selector id. Declaration merupakan aturan CSS yang diterapkan, terdiri atas property dan value.
+    Selector dapat berupa elemen HTML, selector class atau selector id. 
+    Declaration merupakan aturan CSS yang diterapkan, terdiri atas property dan value.
 
 
 # Praktikum 2
@@ -245,7 +246,8 @@ dengan mengacu pada CSS Cheat Sheet yang diberikan pada file terpisah dari modul
     ```
 
     Output:
-    ![gambar.6]()
+
+![gambar.6](gambar/tugas.png)
 
 
 2. Apa perbedaan pendeklarasian CSS elemen h1 {...} dengan #intro h1 {...}? berikan penjelasannya!
@@ -256,7 +258,6 @@ ini adalah selektor umum yang diterapkan pada semua elemen `h1`.
 
 * `#intro h1 {...}` adalah contoh dari pendeklarasian CSS yang menggunakan kombinasi selektor ID dan elemen untuk memilih elemen `h1` yang terletak di dalam elemen dengan ID "intro". 
 Ini berarti hanya elemen `h1` yang berada dalam konteks elemen dengan ID "intro" yang akan memengaruhi gaya yang didefinisikan dalam aturan CSS.
-
 
 3. Apabila ada deklarasi CSS secara internal, lalu ditambahkan CSS eksternal dan inline CSS pada
 elemen yang sama. Deklarasi manakah yang akan ditampilkan pada browser? Berikan
@@ -276,3 +277,36 @@ maka urutan prioritas atau cascading order yang berlaku adalah sebagai berikut:
     - Deklarasi Internal: CSS yang didefinisikan di dalam tag <style> di bagian <head> dokumen HTML 
     memiliki tingkat spesifikasi yang lebih tinggi daripada 
     deklarasi eksternal, tetapi lebih rendah daripada inline.
+
+4. Pada sebuah elemen HTML terdapat ID dan Class, apabila masing-masing selector tersebut terdapat deklarasi CSS, 
+maka deklarasi manakah yang akan ditampilkan pada browser?
+Berikan penjelasan dan contohnya! 
+    ```html
+    <p id="paragraf-1" class="text-paragraf"> 
+     ```
+
+* Ketika sebuah elemen HTML memiliki ID dan kelas yang diberikan pada saat yang sama, dan masing-masing selector tersebut memiliki deklarasi CSS, maka ID akan memiliki prioritas yang lebih tinggi daripada kelas. Dengan kata lain, deklarasi yang terkait dengan ID elemen akan digunakan oleh browser. Ini disebabkan oleh spesifikasinya, di mana ID lebih spesifik daripada kelas.
+
+    example:
+
+    ```html
+    <!DOCTYPE html>
+    <html>
+    <head>
+    <style>
+    #paragraf-1 {
+        color: yellow;
+    }
+
+    .text-paragraf {
+    color: red;
+    }
+    </style>
+    </head>
+    <body>
+        <p id="paragraf-1" class="text-paragraf">Saya seorang mahasiswi di Universitas Pelita Bangsa
+        </p>
+    </body>
+    </html>
+    ```
+    Maka hasil dari text `Saya seorang mahasiswi di Universitas Pelita Bangsa` akan berwarna kuning.
